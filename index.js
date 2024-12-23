@@ -11,9 +11,11 @@ function getComputerChoice() {
 }
 function getHumanChoice() {
   humanChoice = prompt("Rock,Paper or Scissors?");
+  humanChoice =
+    humanChoice.toUpperCase().at() + humanChoice.slice(1).toLowerCase();
   return humanChoice;
 }
-function playRound(humanChoice, computerChoice) {
+function playRound(ComputerChoice, humanChoice) {
   humanChoice = getHumanChoice();
   computerChoice = getComputerChoice();
   console.log("You've Choosed " + humanChoice);
@@ -40,10 +42,6 @@ function playRound(humanChoice, computerChoice) {
     console.log("It was a Tie! Play again");
   }
 }
-
-const humanScore = 0;
-const computerScore = 0;
-
 function playGame() {
   playRound();
   console.log(
@@ -66,5 +64,6 @@ function playGame() {
     `The Scoreboard is: Computer ${computerScore} - You ${humanScore}`
   );
 }
-
+let humanScore = 0;
+let computerScore = 0;
 playGame();
